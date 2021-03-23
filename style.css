@@ -66,7 +66,7 @@ body {
     content: '';
     width: calc(100% - 180px);
     height: 4px;
-    background: #FF6622;
+    background: linear-gradient(45deg, rgb(7, 7, 7), #FF6622);
     position: absolute;
     right: 0;
     bottom: 0;
@@ -91,6 +91,10 @@ body {
 .hero-container header ul li a:hover {
     background-color: black;
     color: white;
+}
+
+.hero-container header ul li:nth-child(2) a span {
+    margin-right: 8px;
 }
 
 .hero-container header ul li:not(:last-child) {
@@ -194,7 +198,7 @@ main aside ul {
     margin: 0;
 }
 
-.mainmenu a {
+.mainmenu li a {
     display: block;
     text-decoration: none;
     font-size: 0.90rem;
@@ -204,7 +208,7 @@ main aside ul {
     position: relative;
 }
 
-.mainmenu a:after {
+.mainmenu li a:after {
     content: '';
     height: 28px;
     position: absolute;
@@ -215,7 +219,7 @@ main aside ul {
     background: #fc5a15;
 }
 
-.mainmenu a:hover:after {
+.mainmenu li a:hover:after {
     width: 5px;
 }
 
@@ -326,6 +330,76 @@ main aside ul {
     }
 }
 
+@media (max-width: 830px) {
+    main .products .card-container {
+        justify-content: center;
+    }
+
+    main .products .card-container {
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 846px) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1px;
+    }
+
+    main aside {
+        width: 100%;
+        padding-top: 0;
+        padding-left: 2px;
+    }
+
+    .mainmenu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mainmenu li {
+        width: 110px;
+    }
+
+
+    .mainmenu li a {
+        font-size: 0.8rem;
+        padding: 4px;
+        text-align: center;
+        margin: 2px;
+        background: linear-gradient(0deg, rgb(52, 173, 221), #0454e9);
+        padding-left: 10px;
+        color: rgb(243, 242, 242);
+        text-align: left;
+    }
+
+    main .products {
+        width: 100%;
+        padding-top: 30px;
+    }
+
+    .submenu a:after {
+        height: 100%;
+        top: 0px;
+        left: 0px;
+    }
+
+    .submenu a:hover:after {
+        width: 5px;
+    }
+
+    .mainmenu li a:after {
+        height: 100%;
+        top: 0;
+    }
+
+    .hero-container {
+        padding: 0;
+    }
+
+}
 
 @media (max-width: 740px) {
     .hero-container header ul {
@@ -349,18 +423,23 @@ main aside ul {
 
     .hero-container header {
         margin-right: 0;
-        width: 85%;
         margin: 0 auto;
     }
 
     .hero-container header .topbar {
         top: 50%;
-        right: 20px;
+        right: 60px;
         transform: translate(0, -50%);
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 220px;
+        width: 190px;
+        /* background-color: aquamarine; */
+    }
+
+    .hero-container header .topbar a:first-child {
+        margin-right: 35px;
+        font-size: 1.2rem;
     }
 
     .hero-container header .topbar a {
@@ -393,9 +472,26 @@ main aside ul {
     .nav-items .search-input {
         width: 180px;
     }
+
+    .mainmenu {
+        justify-content: flex-start;
+    }
+
+    main .products .card-container {
+        justify-content: center;
+    }
+
+    .logo {
+        height: 60px;
+        width: 120px;
+    }
+
+    .hero-container header:after {
+        width: calc(100% - 120px);
+    }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 661px) {
     .hero-container header {
         width: 100%;
     }
@@ -405,7 +501,7 @@ main aside ul {
     }
 
     .hero-container header .topbar {
-        right: 0px;
+        right: 15px;
     }
 }
 
@@ -430,7 +526,7 @@ main aside ul {
         width: 110px;
     }
 
-    .mainmenu a {
+    .mainmenu li a {
         font-size: 0.8rem;
         padding: 4px;
         margin: 2px;
