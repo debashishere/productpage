@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F5F5F5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-container header {
+    width: 100%;
+    position: relative;
+    padding-top: 0;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: white;
+}
+
+.hero-container header .topbar {
+    position: absolute;
+    width: 140px;
+    top: 15px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-container header .topbar a {
+    color: rgb(104, 104, 104);
+    font-size: 0.95rem;
+}
+
+
+.hero-container header .topbar a:nth-child(2) span {
+    margin-right: 7px;
+
+}
+
+.logo {
+    height: 90px;
+    width: 180px;
+    position: relative;
+}
+
+.logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-container header:after {
+    content: '';
+    width: calc(100% - 180px);
+    height: 4px;
+    background: #FF6622;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.hero-container header ul {
+    list-style-type: none;
+    padding-bottom: 12px;
+    font-size: 1rem;
+    letter-spacing: 0.02rem;
+    display: flex;
+}
+
+.hero-container header ul li a {
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+    color: black;
+    transition: 0.2s all ease-in-out;
+}
+
+.hero-container header ul li a:hover {
+    background-color: black;
+    color: white;
+}
+
+.hero-container header ul li:not(:last-child) {
+    margin-right: 5px;
+}
+
+.hero-container header ul li:first-child a span {
+    padding-right: 5px;
+}
+
+main {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+main .products {
+    width: calc(100% - 190px);
+    padding-left: 0px;
+}
+
+main .products .card-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+main .products .card-container .card {
+    width: 250px;
+    background: white;
+    position: relative;
+    border-radius: 8px;
+    padding-left: 60px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    margin: 40px 10px;
+}
+
+
+main .products .card-container .card img {
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+main .products .card-container .tag {
+    background-color: rgb(23, 108, 187);
+    font-size: 0.65rem;
+    border-radius: 5px;
+    padding: 0 7px;
+    color: white;
+    top: 5px;
+    left: 60px;
+    position: absolute;
+}
+
+main .products .card-container .card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+main .products .card-container .card p {
+    padding-top: 5px;
+    font-size: 0.95rem;
+    padding-bottom: 30px;
+}
+
+main .products .card-container .card span:last-child {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fc5a15;
+    display: block;
+    width: 100%;
+    padding-right: 20px;
+    text-align: right;
+}
+
+main aside {
+    width: 180px;
+    padding-top: 30px;
+}
+
+main aside ul {
+    list-style-type: none;
+}
+
+
+.mainmenu,
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mainmenu a {
+    display: block;
+    text-decoration: none;
+    font-size: 0.90rem;
+    font-weight: 500;
+    padding: 8px;
+    color: #000;
+    position: relative;
+}
+
+.mainmenu a:after {
+    content: '';
+    height: 28px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    transition: 0.5s all ease-in-out;
+    -webkit-transition: all 0.3s ease 0s;
+    background: #fc5a15;
+}
+
+.mainmenu a:hover:after {
+    width: 5px;
+}
+
+.mainmenu li:hover .submenu {
+    display: block;
+    max-height: 200px;
+}
+
+.submenu a {
+    font-size: 0.80rem;
+    padding-left: 15px;
+}
+
+.submenu a:after {
+    content: '';
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: 0.3s all ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    background: #fc5a15;
+}
+
+.submenu a:hover:after {
+    width: 5px;
+}
+
+.submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.5s ease-out;
+}
+
+.nav-items li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.nav-items .search-input {
+    outline: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 8px;
+    width: 210px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgb(129, 129, 129);
+}
+
+.nav-items li .search-input:focus {
+    outline: none;
+    background: rgb(236, 236, 236);
+}
+
+.nav-items .active-Icon {
+    background: gray;
+    border-radius: 5px;
+    padding: 4px 6px;
+    margin-right: 5px;
+    color: white;
+    transition: 0.3s all ease-in-out;
+}
+
+.nav-items .active-Icon:hover {
+    background: black;
+}
+
+.hambarger {
+    visibility: hidden;
+}
+
+.close-btn {
+    visibility: hidden;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+}
+
+.nav-overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    z-index: 20;
+}
+
+.nav-overlay.active {
+    visibility: visible;
+}
+
+@media (max-width: 1200px) {
+    .hero-container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    main .products .card-container .card {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+
+@media (max-width: 740px) {
+    .hero-container header ul {
+        margin-bottom: 0;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0px;
+        padding-top: 60px;
+        background-color: rgb(255, 255, 255);
+        width: 0px;
+        height: 100vh;
+        z-index: 40;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .hero-container header ul.active {
+        width: 250px;
+    }
+
+    .hero-container header {
+        margin-right: 0;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .hero-container header .topbar {
+        top: 50%;
+        right: 20px;
+        transform: translate(0, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 220px;
+    }
+
+    .hero-container header .topbar a {
+        margin-right: 20px;
+    }
+
+    .hambarger {
+        visibility: visible;
+        font-size: 1.7rem;
+    }
+
+    .hero-container header ul li a {
+        width: 80%;
+        padding-left: 40px;
+        text-align: left;
+    }
+
+    .hero-container header ul li:not(:first-child) a {
+        margin-top: 10px;
+    }
+
+    .hero-container header ul li:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .nav-items .active-Icon {
+        margin-right: 0;
+    }
+
+    .nav-items .search-input {
+        width: 180px;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero-container header {
+        width: 100%;
+    }
+
+    .hero-container {
+        padding: 0;
+    }
+
+    .hero-container header .topbar {
+        right: 0px;
+    }
+}
+
+@media (max-width: 485px) {
+    main {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main aside {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .mainmenu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mainmenu li {
+        width: 110px;
+    }
+
+    .mainmenu a {
+        font-size: 0.8rem;
+        padding: 4px;
+        margin: 2px;
+        border: 1px solid gray;
+    }
+
+    main .products {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+
+    main .products .card-container .card {
+        margin-right: 0;
+        margin-left: 40px;
+    }
+
+
+    .hero-container header .topbar {
+        width: 100%;
+        justify-content: flex-end;
+        padding-right: 5px;
+    }
+
+    .hero-container header .topbar a {
+        margin-right: 10px;
+    }
+
+    .hero-container header .topbar a:nth-child(2) span {
+        margin-right: 2px;
+    }
+}
+
+
+@media (max-width: 335px) {
+    .logo {
+        visibility: hidden;
+    }
+
+    .hero-container header:after {
+        width: 100%;
+    }
+
+    .hero-container header .topbar {
+        justify-content: center;
+    }
+}
