@@ -13,38 +13,61 @@ body {
 
 .hero-container {
     width: 1200px;
+    padding-bottom: 80px;
     margin: 0 auto;
 }
 
 .hero-container header {
     width: 100%;
-    position: relative;
+    position: sticky;
+    top: 0;
     padding-top: 0;
     padding-right: 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     background-color: white;
+    z-index: 30;
 }
 
 .hero-container header .topbar {
     position: absolute;
-    width: 140px;
+    width: 160px;
     top: 15px;
-    right: 10px;
+    right: 0px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .hero-container header .topbar a {
     color: rgb(104, 104, 104);
-    font-size: 0.95rem;
+    font-size: 0.80rem;
+    cursor: pointer;
 }
 
+.hero-container header .topbar a:first-child {
+    transition: 0.2s all ease-in-out;
+}
+
+.hero-container header .topbar a:first-child:hover {
+    color: #FF6622;
+}
 
 .hero-container header .topbar a:nth-child(2) span {
     margin-right: 7px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: rgb(95, 95, 95);
+    transition: 0.2s all ease-in-out;
+}
 
+.hero-container header .topbar a:nth-child(2):hover span {
+    color: #FF6622;
+}
+
+.hero-container header .topbar a:nth-child(2):hover {
+    color: #FF6622;
 }
 
 .logo {
@@ -74,7 +97,7 @@ body {
 
 .hero-container header ul {
     list-style-type: none;
-    padding-bottom: 12px;
+    padding-bottom: 7px;
     font-size: 1rem;
     letter-spacing: 0.02rem;
     display: flex;
@@ -83,6 +106,7 @@ body {
 .hero-container header ul li a {
     text-decoration: none;
     padding: 4px 8px;
+    font-size: 0.88rem;
     border-radius: 5px;
     color: black;
     transition: 0.2s all ease-in-out;
@@ -111,7 +135,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
+    position: relative
 }
 
 main .products {
@@ -129,24 +153,35 @@ main .products .card-container {
 
 main .products .card-container .card {
     width: 250px;
+    height: 215px;
     background: white;
     position: relative;
     border-radius: 8px;
+    padding-top: 20px;
+    margin: 40px 10px;
+    border: 1px solid rgb(235, 235, 235);
+    box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
+    transition: height 500ms;
+    z-index: 20;
+    overflow: visible !important;
+}
+
+
+main .products .card-container .card div:first-child {
     padding-left: 60px;
     padding-top: 20px;
     padding-right: 20px;
     padding-bottom: 5px;
-    margin: 40px 10px;
+    z-index: 10;
 }
-
 
 main .products .card-container .card img {
     position: absolute;
     width: 100%;
-    height: 130%;
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
+    height: 270px;
+    top: -25px;
+    left: -120px;
+    z-index: 30;
 }
 
 main .products .card-container .tag {
@@ -165,20 +200,90 @@ main .products .card-container .card h2 {
     font-weight: 600;
 }
 
-main .products .card-container .card p {
+main .products .card-container .card div:first-child p {
     padding-top: 5px;
     font-size: 0.95rem;
     padding-bottom: 30px;
 }
 
-main .products .card-container .card span:last-child {
+main .products .card-container .card span.price {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #fc5a15;
+    color: #FF6622;
     display: block;
     width: 100%;
     padding-right: 20px;
     text-align: right;
+}
+
+main .products .card-container .card .addto-cart {
+    position: relative;
+    height: 0%;
+    width: 100%;
+    top: -10px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 43px;
+    margin-top: 10px;
+    opacity: 0;
+    transition: height 500ms, opacity 200ms;
+    z-index: 10;
+}
+
+
+main .products .card-container .card .addto-cart:hover {
+    height: 68px;
+    opacity: 1;
+}
+
+main .products .card-container .card .addto-cart p.quantity {
+    font-size: 0.95rem;
+    color: rgb(168, 168, 168);
+}
+
+main .products .card-container .card .addto-cart p#count {
+    font-size: 1rem;
+    text-align: right;
+    color: rgb(14, 14, 14);
+}
+
+main .products .card-container .card .addto-cart div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70px;
+    margin-bottom: 12px;
+    margin-top: 3px;
+}
+
+main .products .card-container .card .addto-cart div p {
+    margin-right: 8px;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: black;
+}
+
+main .products .card-container .card .addto-cart div span {
+    font-size: 1.2rem;
+    color: rgb(168, 168, 168);
+}
+
+main .products .card-container .card .addto-cart button.cart-btn {
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    background-color: #000;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 7px 0;
+    font-size: 1rem;
 }
 
 main aside {
@@ -206,6 +311,7 @@ main aside ul {
     padding: 8px;
     color: #000;
     position: relative;
+    transition: 0.5s all ease-in-out;
 }
 
 .mainmenu li a:after {
@@ -226,26 +332,39 @@ main aside ul {
 .mainmenu li:hover .submenu {
     display: block;
     max-height: 200px;
+    padding-bottom: 13px;
 }
 
-.submenu a {
-    font-size: 0.80rem;
-    padding-left: 15px;
+.mainmenu li a:hover {
+    color: #fc5a15;
 }
 
-.submenu a:after {
+
+.submenu li a {
+    font-size: 0.75rem;
+    margin-left: 13px;
+    width: 160px;
+    padding: 4px;
+    padding-left: 13px;
+}
+
+.submenu li a:after {
     content: '';
-    height: 25px;
+    height: 15px;
     position: absolute;
     top: 5px;
     left: 5px;
-    transition: 0.3s all ease-in-out;
+    transition: 0.2s all ease-in-out;
     -webkit-transition: all 0.3s ease-in-out 0s;
     background: #fc5a15;
 }
 
-.submenu a:hover:after {
-    width: 5px;
+.submenu li a:hover:after {
+    width: 4px;
+}
+
+.submenu a:hover {
+    color: #fc5a15;
 }
 
 .submenu {
@@ -280,6 +399,7 @@ main aside ul {
 .nav-items .active-Icon {
     background: gray;
     border-radius: 5px;
+    font-size: .88rem;
     padding: 4px 6px;
     margin-right: 5px;
     color: white;
@@ -292,6 +412,7 @@ main aside ul {
 
 .hambarger {
     visibility: hidden;
+    width: 0;
 }
 
 .close-btn {
@@ -359,8 +480,10 @@ main aside ul {
         flex-wrap: wrap;
     }
 
-    .mainmenu li {
-        width: 110px;
+    .submenu li a {
+        font-size: 0.75rem;
+        margin-left: 13px;
+        width: 160px;
     }
 
 
@@ -388,6 +511,7 @@ main aside ul {
 
     .submenu a:hover:after {
         width: 5px;
+        left: 0;
     }
 
     .mainmenu li a:after {
@@ -397,6 +521,16 @@ main aside ul {
 
     .hero-container {
         padding: 0;
+    }
+
+    .submenu li a {
+        font-size: 0.70rem;
+        width: 160px;
+        color: black;
+    }
+
+    .submenu a:hover {
+        color: white;
     }
 
 }
@@ -439,7 +573,7 @@ main aside ul {
 
     .hero-container header .topbar a:first-child {
         margin-right: 35px;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .hero-container header .topbar a {
@@ -489,11 +623,16 @@ main aside ul {
     .hero-container header:after {
         width: calc(100% - 120px);
     }
+
+    .hero-container header ul li:nth-child(2) {
+        line-break: strict;
+    }
 }
 
 @media (max-width: 661px) {
     .hero-container header {
         width: 100%;
+        margin-right: 0;
     }
 
     .hero-container {
@@ -522,15 +661,13 @@ main aside ul {
         flex-wrap: wrap;
     }
 
-    .mainmenu li {
-        width: 110px;
-    }
 
     .mainmenu li a {
         font-size: 0.8rem;
         padding: 4px;
         margin: 2px;
         border: 1px solid gray;
+        padding-left: 10px;
     }
 
     main .products {
@@ -546,22 +683,45 @@ main aside ul {
 
 
     .hero-container header .topbar {
-        width: 100%;
-        justify-content: flex-end;
         padding-right: 5px;
     }
 
     .hero-container header .topbar a {
-        margin-right: 10px;
+        margin-right: 15px;
     }
 
     .hero-container header .topbar a:nth-child(2) span {
         margin-right: 2px;
     }
+
+    .submenu li a {
+        font-size: 0.70rem;
+        width: 160px;
+        padding: 4px;
+        padding-left: 10px;
+    }
+
+
+
 }
 
 
 @media (max-width: 335px) {
+    .logo {
+        height: 50px;
+        width: 100px;
+    }
+
+    .hero-container header:after {
+        width: calc(100% - 99px);
+    }
+
+    .hero-container header .topbar {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 290px) {
     .logo {
         visibility: hidden;
     }
@@ -570,7 +730,11 @@ main aside ul {
         width: 100%;
     }
 
+    .hero-container header {
+        padding-right: 0;
+    }
+
     .hero-container header .topbar {
-        justify-content: center;
+        width: 100%;
     }
 }
