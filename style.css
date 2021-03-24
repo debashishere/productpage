@@ -44,13 +44,10 @@ body {
     color: rgb(104, 104, 104);
     font-size: 0.80rem;
     cursor: pointer;
-    transition: 0.2s all ease-in-out;
-}
-
-
-
-.hero-container header .topbar a:hover {
-    color: #FF6622;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
 }
 
 .hero-container header .topbar a:nth-child(2) span {
@@ -68,10 +65,11 @@ body {
     width: 5px;
     background: red;
     border-radius: 50%;
-    top: -2px;
-    left: 6px;
+    top: -2px;left: 6px;
 }
-
+.hero-container header .topbar a:hover {
+    color: #FF6622;
+}
 .logo {
     height: 90px;
     width: 180px;
@@ -91,6 +89,7 @@ body {
     content: '';
     width: calc(100% - 180px);
     height: 4px;
+    background: #FF6622;
     background: linear-gradient(45deg, rgb(7, 7, 7), #FF6622);
     position: absolute;
     right: 0;
@@ -111,7 +110,10 @@ body {
     font-size: 0.88rem;
     border-radius: 5px;
     color: black;
-    transition: 0.2s all ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
 }
 
 .hero-container header ul li a:hover {
@@ -163,7 +165,12 @@ main .products .card-container .card {
     margin: 40px 10px;
     border: 1px solid rgb(235, 235, 235);
     box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
+    -webkit-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
+    -moz-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
     transition: height 500ms;
+    -webkit-transition: height 500ms;
+    -moz-transition: height 500ms;
+    -o-transition: height 500ms;
     z-index: 20;
     overflow: visible !important;
 }
@@ -236,6 +243,9 @@ main .products .card-container .card .addto-cart {
     margin-top: 10px;
     opacity: 0;
     transition: height 500ms, opacity 200ms;
+    -webkit-transition: height 500ms, opacity 200ms;
+    -moz-transition: height 500ms, opacity 200ms;
+    -o-transition: height 500ms, opacity 200ms;
     z-index: 10;
 }
 
@@ -325,7 +335,10 @@ main aside ul {
     padding: 8px;
     color: #000;
     position: relative;
-    transition: 0.5s all ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 
 .mainmenu li a:after {
@@ -334,8 +347,10 @@ main aside ul {
     position: absolute;
     top: 5px;
     left: 0;
-    transition: 0.5s all ease-in-out;
-    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
     background: #fc5a15;
 }
 
@@ -368,8 +383,10 @@ main aside ul {
     position: absolute;
     top: 5px;
     left: 5px;
-    transition: 0.2s all ease-in-out;
+    transition: all 0.3s ease-in-out 0s;
     -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
     background: #fc5a15;
 }
 
@@ -384,8 +401,10 @@ main aside ul {
 .submenu {
     overflow: hidden;
     max-height: 0;
-    -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
 }
 
 .nav-items li {
@@ -420,7 +439,10 @@ main aside ul {
     margin-right: 5px;
     margin-bottom: 2px;
     color: white;
-    transition: 0.3s all ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
 }
 
 .nav-items .active-Icon:hover {
@@ -453,7 +475,10 @@ main aside ul {
     width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
     z-index: 20;
 }
 
@@ -514,10 +539,15 @@ main aside ul {
         padding: 4px;
         text-align: center;
         margin: 2px;
+        background: rgb(30, 192, 103);
         background: linear-gradient(0deg, rgb(52, 173, 221), #0454e9);
         padding-left: 10px;
-        color: rgb(243, 242, 242);
+        color: rgb(204, 204, 204);
         text-align: left;
+    }
+
+    .mainmenu li a:hover {
+        color: whitesmoke;
     }
 
     main .products {
@@ -548,11 +578,11 @@ main aside ul {
     .submenu li a {
         font-size: 0.70rem;
         width: 160px;
-        color: black;
+        color: rgb(204, 204, 204);
     }
 
     .submenu a:hover {
-        color: white;
+        color: whitesmoke;
     }
 
 }
@@ -570,7 +600,10 @@ main aside ul {
         height: 100vh;
         z-index: 40;
         overflow: hidden;
-        transition: 0.5s;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
     }
 
     .hero-container header ul.active {
