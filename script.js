@@ -5,7 +5,8 @@ $(document).ready(() => {
         event.preventDefault();
         const parent = $('.search').parent();
         parent.html(`
-            <input class="search-input type="text" placeholder="Search here..."><span class="active-Icon"><i class="fas fa-search"></span></i>
+            <input class="search-input type="text" placeholder="Search here...">
+            <span class="active-Icon"><i class="fas fa-search"></span></i>
         `)
     })
 
@@ -38,5 +39,10 @@ $(document).ready(() => {
 
     });
 
-
+    $('.count-btn').on("click", function (event) {
+        const countElement = $(this).prev()
+        let count = countElement.text();
+        count = parseInt(count) + 1;
+        countElement.text(count)
+    })
 })

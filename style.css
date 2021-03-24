@@ -44,30 +44,32 @@ body {
     color: rgb(104, 104, 104);
     font-size: 0.80rem;
     cursor: pointer;
-}
-
-.hero-container header .topbar a:first-child {
     transition: 0.2s all ease-in-out;
 }
 
-.hero-container header .topbar a:first-child:hover {
+
+
+.hero-container header .topbar a:hover {
     color: #FF6622;
 }
 
 .hero-container header .topbar a:nth-child(2) span {
     margin-right: 7px;
-    font-size: 1rem;
-    cursor: pointer;
-    color: rgb(95, 95, 95);
-    transition: 0.2s all ease-in-out;
 }
 
-.hero-container header .topbar a:nth-child(2):hover span {
-    color: #FF6622;
+.hero-container header .topbar a:first-child span {
+    position: relative;
 }
 
-.hero-container header .topbar a:nth-child(2):hover {
-    color: #FF6622;
+.hero-container header .topbar a:first-child span:before {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background: red;
+    border-radius: 50%;
+    top: -2px;
+    left: 6px;
 }
 
 .logo {
@@ -172,6 +174,10 @@ main .products .card-container .card div:first-child {
     padding-top: 20px;
     padding-right: 20px;
     padding-bottom: 5px;
+    min-height: 192px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     z-index: 10;
 }
 
@@ -202,7 +208,7 @@ main .products .card-container .card h2 {
 
 main .products .card-container .card div:first-child p {
     padding-top: 5px;
-    font-size: 0.95rem;
+    font-size: 0.80rem;
     padding-bottom: 30px;
 }
 
@@ -271,12 +277,16 @@ main .products .card-container .card .addto-cart div span {
     color: rgb(168, 168, 168);
 }
 
+main .products .card-container .card .addto-cart div span:hover {
+    color: rgb(63, 63, 63);
+}
+
 main .products .card-container .card .addto-cart button.cart-btn {
     width: 100%;
     position: absolute;
     bottom: -40px;
     left: 0;
-    background-color: #000;
+    background-color: rgb(27, 27, 27);
     color: white;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -284,6 +294,10 @@ main .products .card-container .card .addto-cart button.cart-btn {
     border: none;
     padding: 7px 0;
     font-size: 1rem;
+}
+
+main .products .card-container .card .addto-cart button.cart-btn:hover {
+    background-color: #000;
 }
 
 main aside {
@@ -371,6 +385,7 @@ main aside ul {
     overflow: hidden;
     max-height: 0;
     -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .nav-items li {
@@ -384,7 +399,8 @@ main aside ul {
     outline: none;
     border-radius: 5px;
     margin-right: 5px;
-    padding: 8px;
+    margin-bottom: 2px;
+    padding: 6px;
     width: 210px;
     font-size: 0.9rem;
     font-weight: 500;
@@ -402,6 +418,7 @@ main aside ul {
     font-size: .88rem;
     padding: 4px 6px;
     margin-right: 5px;
+    margin-bottom: 2px;
     color: white;
     transition: 0.3s all ease-in-out;
 }
@@ -420,7 +437,12 @@ main aside ul {
     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    color: rgb(167, 167, 167);
+}
+
+.close-btn:hover {
+    color: rgb(107, 107, 107);
 }
 
 .nav-overlay {
@@ -568,17 +590,18 @@ main aside ul {
         justify-content: center;
         align-items: center;
         width: 190px;
-        /* background-color: aquamarine; */
-    }
-
-    .hero-container header .topbar a:first-child {
-        margin-right: 35px;
-        font-size: 1.1rem;
     }
 
     .hero-container header .topbar a {
         margin-right: 20px;
     }
+
+    .hero-container header .topbar a:first-child {
+        margin-right: 35px;
+        font-size: 1.1rem;
+
+    }
+
 
     .hambarger {
         visibility: visible;
@@ -626,6 +649,10 @@ main aside ul {
 
     .hero-container header ul li:nth-child(2) {
         line-break: strict;
+    }
+
+    .hero-container header .topbar a:first-child span:before {
+        left: 9.5px;
     }
 }
 
