@@ -33,11 +33,22 @@ $(document).ready(() => {
 
     });
 
-    $('.count-btn').on("click", function (event) {
+    $('.count-plus-btn').on("click", function (event) {
         const countElement = $(this).prev()
-        let count = countElement.text();
+        let count = countElement.val();
         count = parseInt(count) + 1;
-        countElement.text(count)
+        countElement.val(count)
+    })
+
+    $('.count-minus-btn').on("click", function (event) {
+        const countElement = $(this).next()
+        let count = countElement.val();
+        if (count <= 0) {
+            count = 0
+        } else {
+            count = parseInt(count) - 1;
+        }
+        countElement.val(count)
     })
 })
 window.addEventListener('scroll', () => {

@@ -241,7 +241,7 @@ main .products .card-container .card span.price {
     color: #FF6622;
     display: block;
     width: 100%;
-    padding-right: 20px;
+    padding-right: 30px;
     text-align: right;
 }
 
@@ -255,7 +255,7 @@ main .products .card-container .card .addto-cart {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-right: 43px;
+    /* padding-right: 43px; */
     margin-top: 10px;
     opacity: 0;
     transition: height 500ms, opacity 200ms;
@@ -274,32 +274,49 @@ main .products .card-container .card .addto-cart:hover {
 main .products .card-container .card .addto-cart p.quantity {
     font-size: 0.95rem;
     color: rgb(168, 168, 168);
+    padding-right: 53px;
 }
 
-main .products .card-container .card .addto-cart p#count {
-    font-size: 1rem;
-    text-align: right;
+main .products .card-container .card .addto-cart input#count {
+    font-size: 0.8rem;
+    width: 50px;
+    background-color: white;
+    text-align: center;
     color: rgb(14, 14, 14);
+    outline: none;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+main .products .card-container .card .addto-cart input#count:hover {
+    background-color: whitesmoke;
+}
+
+main .products .card-container .card .addto-cart input#count:focus {
+    outline: none;
 }
 
 main .products .card-container .card .addto-cart div {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 70px;
-    margin-bottom: 12px;
-    margin-top: 3px;
+    width: 100px;
+    margin: 3px 25px 12px 0;
 }
 
-main .products .card-container .card .addto-cart div p {
-    margin-right: 8px;
+main .products .card-container .card .addto-cart div input {
+    margin-right: 5px;
+    margin-left: 5px;
     font-size: 1.9rem;
     font-weight: 700;
     color: black;
 }
 
 main .products .card-container .card .addto-cart div span {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: rgb(168, 168, 168);
 }
 
@@ -570,15 +587,16 @@ main aside ul {
         padding-top: 30px;
     }
 
-    .submenu a:after {
+    .submenu li a:after {
         height: 100%;
+        width: 5px;
         top: 0px;
         left: 0px;
+        opacity: 0;
     }
 
     .submenu a:hover:after {
-        width: 5px;
-        left: 0;
+        opacity: 1;
     }
 
     .mainmenu li a:after {
@@ -599,7 +617,6 @@ main aside ul {
     .submenu a:hover {
         color: rgb(194, 255, 255);
     }
-
 
 
 }
