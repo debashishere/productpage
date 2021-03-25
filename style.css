@@ -557,6 +557,7 @@ main aside ul {
     .mainmenu {
         display: flex;
         flex-wrap: wrap;
+        padding-top: 2px;
     }
 
     .submenu li a {
@@ -824,7 +825,6 @@ main aside ul {
         font-size: 0.8rem;
         padding: 4px;
         margin: 2px;
-        border: 1px solid gray;
         padding-left: 10px;
     }
 
