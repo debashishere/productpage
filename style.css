@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -23,12 +24,15 @@ body {
     top: 0;
     padding-top: 0;
     padding-right: 20px;
+    box-shadow: 3px 3px 15px -10px black;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     background-color: white;
-    z-index: 30;
+    z-index: 999 !important;
+    transition: 0.5s;
 }
+
 
 .hero-container header .topbar {
     position: absolute;
@@ -65,11 +69,14 @@ body {
     width: 5px;
     background: red;
     border-radius: 50%;
-    top: -2px;left: 6px;
+    top: -2px;
+    left: 6px;
 }
+
 .hero-container header .topbar a:hover {
     color: #FF6622;
 }
+
 .logo {
     height: 90px;
     width: 180px;
@@ -85,12 +92,20 @@ body {
     object-fit: cover;
 }
 
+
 .hero-container header:after {
     content: '';
     width: calc(100% - 180px);
     height: 4px;
     background: #FF6622;
-    background: linear-gradient(45deg, rgb(7, 7, 7), #FF6622);
+    background: linear-gradient(to right,
+            rgb(7, 7, 7),
+            red,
+            #f06d06,
+            #f16e09,
+            #ff8427,
+            #f5ba3c,
+            green);
     position: absolute;
     right: 0;
     bottom: 0;
@@ -108,8 +123,9 @@ body {
     text-decoration: none;
     padding: 4px 8px;
     font-size: 0.88rem;
+    font-weight: 500;
     border-radius: 5px;
-    color: black;
+    color: rgb(116, 116, 116);
     transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -117,8 +133,8 @@ body {
 }
 
 .hero-container header ul li a:hover {
-    background-color: black;
-    color: white;
+    background-color: rgba(216, 216, 216, 0.5);
+    color: rgb(0, 0, 0);
 }
 
 .hero-container header ul li:nth-child(2) a span {
@@ -432,13 +448,13 @@ main aside ul {
 }
 
 .nav-items .active-Icon {
-    background: gray;
+    background: white;
     border-radius: 5px;
     font-size: .88rem;
     padding: 4px 6px;
     margin-right: 5px;
     margin-bottom: 2px;
-    color: white;
+    color: rgb(116, 116, 116);
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -446,7 +462,8 @@ main aside ul {
 }
 
 .nav-items .active-Icon:hover {
-    background: black;
+    background-color: rgba(216, 216, 216, 0.5);
+    color: rgb(0, 0, 0);
 }
 
 .hambarger {
@@ -467,24 +484,7 @@ main aside ul {
     color: rgb(107, 107, 107);
 }
 
-.nav-overlay {
-    visibility: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    z-index: 20;
-}
 
-.nav-overlay.active {
-    visibility: visible;
-}
 
 @media (max-width: 1200px) {
     .hero-container {
@@ -505,6 +505,21 @@ main aside ul {
 
     main .products .card-container {
         padding-left: 40px;
+    }
+
+    .hero-container header:before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: white;
+        z-index: 20;
+    }
+
+    .hero-container header {
+        box-shadow: 5px 5px 18px -3px rgb(65, 214, 182);
     }
 }
 
@@ -539,15 +554,15 @@ main aside ul {
         padding: 4px;
         text-align: center;
         margin: 2px;
-        background: rgb(30, 192, 103);
-        background: linear-gradient(0deg, rgb(52, 173, 221), #0454e9);
+        background: rgb(65, 214, 182);
+        background: linear-gradient(to top, rgb(74, 110, 224), rgb(65, 214, 182));
         padding-left: 10px;
-        color: rgb(204, 204, 204);
+        color: #000;
         text-align: left;
     }
 
     .mainmenu li a:hover {
-        color: whitesmoke;
+        color: rgb(194, 255, 255);
     }
 
     main .products {
@@ -578,36 +593,71 @@ main aside ul {
     .submenu li a {
         font-size: 0.70rem;
         width: 160px;
-        color: rgb(204, 204, 204);
+        color: rgb(255, 255, 255);
     }
 
     .submenu a:hover {
-        color: whitesmoke;
+        color: rgb(194, 255, 255);
     }
+
+
 
 }
 
 @media (max-width: 740px) {
+    .hero-container header {
+        background: white;
+    }
+
     .hero-container header ul {
-        margin-bottom: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 0;
         flex-direction: column;
         position: fixed;
-        top: 0;
+        top: 60px;
         left: 0px;
-        padding-top: 60px;
-        background-color: rgb(255, 255, 255);
-        width: 0px;
-        height: 100vh;
-        z-index: 40;
+        background-color: white;
+        width: 100%;
+        height: 0%;
         overflow: hidden;
-        transition: all 0.5s ease-in-out;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+    }
+
+    .hero-container header ul:after {
+        content: '';
+        position: fixed;
+        width: 100%;
+        height: 0%;
+        opacity: 0;
+        top: 260px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.4);
+        overflow: scroll;
+        z-index: 40;
+        transition: transform 0.1s ease-in-out, opacity 1.3s ease-in;
+        -webkit-transition: transform 0.1s ease-in-out, opacity 1.3s ease-in;
+        -moz-transition: transform 0.1s ease-in-out, opacity 1.3s ease-in;
+        -o-transition: transform 0.1s ease-in-out, opacity 1.3s ease-in;
+        transform: translateY(240px);
     }
 
     .hero-container header ul.active {
-        width: 250px;
+        height: 200px;
+    }
+
+    .hero-container header ul.active:after {
+        height: 350px;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .hero-container header ul li {
+        width: 230px;
     }
 
     .hero-container header {
@@ -615,9 +665,22 @@ main aside ul {
         margin: 0 auto;
     }
 
+    .hero-container header ul li:first-child {
+        margin-top: 20px;
+    }
+
+    .hero-container header ul li:first-child a span {
+        padding-right: 13px;
+        position: relative;
+    }
+
+    .hero-container header {
+        z-index: 50;
+    }
+
     .hero-container header .topbar {
         top: 50%;
-        right: 60px;
+        right: 18px;
         transform: translate(0, -50%);
         display: flex;
         justify-content: center;
@@ -625,7 +688,7 @@ main aside ul {
         width: 190px;
     }
 
-    .hero-container header .topbar a {
+    .hero-container header .topbar a:not(:last-child) {
         margin-right: 20px;
     }
 
@@ -635,6 +698,23 @@ main aside ul {
 
     }
 
+    .hero-container header .topbar a:last-child {
+        height: 32px;
+        width: 38px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background: rgb(75, 204, 255);
+        background: linear-gradient(to top, rgb(74, 110, 224), rgb(65, 214, 182));
+    }
+
+    .hero-container header .topbar a:last-child span {
+        text-align: center;
+        font-size: 1.4rem;
+        width: 100%;
+    }
 
     .hambarger {
         visibility: visible;
@@ -642,13 +722,14 @@ main aside ul {
     }
 
     .hero-container header ul li a {
-        width: 80%;
-        padding-left: 40px;
+        width: 100%;
         text-align: left;
     }
 
     .hero-container header ul li:not(:first-child) a {
         margin-top: 10px;
+        padding-left: 40px;
+
     }
 
     .hero-container header ul li:not(:last-child) {
@@ -742,13 +823,9 @@ main aside ul {
     }
 
 
-    .hero-container header .topbar {
+    /* .hero-container header .topbar {
         padding-right: 5px;
-    }
-
-    .hero-container header .topbar a {
-        margin-right: 15px;
-    }
+    } */
 
     .hero-container header .topbar a:nth-child(2) span {
         margin-right: 2px;
@@ -765,8 +842,11 @@ main aside ul {
 
 }
 
-
 @media (max-width: 335px) {
+    .hero-container header .topbar {
+        right: 10px;
+    }
+
     .logo {
         height: 50px;
         width: 100px;
@@ -779,6 +859,15 @@ main aside ul {
     .hero-container header .topbar {
         justify-content: center;
     }
+
+    .hero-container header ul {
+        top: 50px;
+    }
+
+    .hero-container header ul:after {
+        top: 250px;
+    }
+
 }
 
 @media (max-width: 290px) {

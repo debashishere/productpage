@@ -11,14 +11,8 @@ $(document).ready(() => {
     })
 
     $('.hambarger').click((event) => {
-        $('.nav-items').addClass('active');
+        $('.nav-items').toggleClass('active');
         $('.close-btn').css("visibility", "visible");
-        $('.nav-overlay').addClass('active');
-    })
-    $('.close-btn').click((event) => {
-        $('.nav-items').removeClass('active');
-        $('.nav-overlay').removeClass('active');
-
     })
 
     $('.card').hover(function (event) {
@@ -45,4 +39,8 @@ $(document).ready(() => {
         count = parseInt(count) + 1;
         countElement.text(count)
     })
+})
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    header.classList.toggle("sticky", window.scrollY > 0)
 })
