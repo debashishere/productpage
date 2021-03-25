@@ -651,7 +651,7 @@ main aside ul {
     }
 
     .hero-container header ul.active:after {
-        height: 350px;
+        height: 450px;
         transform: translateY(0);
         opacity: 1;
     }
