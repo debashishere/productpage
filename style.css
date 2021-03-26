@@ -635,6 +635,10 @@ main aside ul {
         color: rgb(194, 255, 255);
     }
 
+    main .products .card-container .card {
+        z-index: -10;
+    }
+
 
 }
 
@@ -882,6 +886,16 @@ main aside ul {
         width: 7px;
     }
 
+    main .products {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0px;
+    }
+
+    main .products {
+        padding-right: 15px;
+    }
 
 }
 
@@ -909,6 +923,10 @@ main aside ul {
 
     .hero-container header ul:after {
         top: 250px;
+    }
+
+    main .products {
+        padding-right: 30px;
     }
 
 }
