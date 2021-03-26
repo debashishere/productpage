@@ -25,12 +25,17 @@ body {
     padding-top: 0;
     padding-right: 20px;
     box-shadow: 3px 3px 15px -10px black;
+    -webkit-box-shadow: 3px 3px 15px -10px black;
+    -moz-box-shadow: 3px 3px 15px -10px black;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     background-color: white;
     z-index: 999 !important;
     transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
 }
 
 
@@ -554,6 +559,8 @@ main aside ul {
         background: rgba(0, 0, 0, 0.7);
         width: 175px;
         box-shadow: 11px 11px 25px -10px black;
+        -webkit-box-shadow: 11px 11px 25px -10px black;
+        -moz-box-shadow: 11px 11px 25px -10px black;
         z-index: 50;
     }
 
@@ -562,10 +569,7 @@ main aside ul {
         padding: 4px;
         text-align: center;
         margin: 2px;
-        /* background: rgb(65, 214, 182);
-        background: linear-gradient(to top, rgb(74, 110, 224), rgb(65, 214, 182)); */
         padding-left: 10px;
-        /* color: #000; */
         color: white;
         text-align: left;
         z-index: 50;
@@ -651,8 +655,7 @@ main aside ul {
         top: 260px;
         left: 0;
         background: rgba(0, 0, 0, 0.5);
-        overflow: scroll;
-        z-index: 40;
+        pointer-events: none;
         transition: transform 0.1s ease-in-out, opacity 0.2s ease-in;
         -webkit-transition: transform 0.1s ease-in-out, opacity 0.2s ease-in;
         -moz-transition: transform 0.1s ease-in-out, opacity 0.8s ease-in;
@@ -842,6 +845,8 @@ main aside ul {
     .submenu {
         background: white;
         box-shadow: 4px 4px 18px -10px black;
+        -webkit-box-shadow: 4px 4px 18px -10px black;
+        -moz-box-shadow: 4px 4px 18px -10px black;
         z-index: 30;
     }
 
