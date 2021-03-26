@@ -268,7 +268,7 @@ main .products .card-container .card .addto-cart p.quantity {
     padding-right: 53px;
 }
 
-main .products .card-container .card .addto-cart input#count {
+main .products .card-container .card .addto-cart input.count {
     font-size: 0.8rem;
     width: 50px;
     background-color: white;
@@ -282,11 +282,11 @@ main .products .card-container .card .addto-cart input#count {
     -o-transition: all 0.2s ease-in-out;
 }
 
-main .products .card-container .card .addto-cart input#count:hover {
+main .products .card-container .card .addto-cart input.count:hover {
     background-color: whitesmoke;
 }
 
-main .products .card-container .card .addto-cart input#count:focus {
+main .products .card-container .card .addto-cart input.count:focus {
     outline: none;
 }
 
@@ -616,12 +616,6 @@ main aside ul {
     .submenu li a:hover {
         color: rgb(194, 255, 255);
     }
-
-    main .products .card-container .card {
-        z-index: -10;
-    }
-
-
 }
 
 @media (max-width: 740px) {

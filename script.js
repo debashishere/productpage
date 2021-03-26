@@ -16,6 +16,7 @@ $(document).ready(() => {
     })
 
     $('.card').hover(function (event) {
+        console.log("hover");
         $(this).css({
             'box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)',
             '-webkit-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)',
@@ -51,17 +52,10 @@ $(document).ready(() => {
         countElement.val(count)
     })
 
-    // $('.reveal-overlay').hover(function (event) {
-    //     const subMenu = $(this).next()
-    //     console.log("submenu", subMenu.length);
-    //     let hasSubmenu = subMenu.length
-    //     if (hasSubmenu) {
-    //         console.log("active overlay")
-    //         $('.products').addClass('active');
-    //     } else {
-    //         $('.products').removeClass('active');
-    //     }
-    // })
+    $('.wish-list').hover(function (event) {
+        const ele = $(this);
+        ele.html(`<span><i class="fas fa-heart"></i></span>WishList`)
+    })
 })
 
 
