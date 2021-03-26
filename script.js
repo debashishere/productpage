@@ -10,9 +10,20 @@ $(document).ready(() => {
         `)
     })
 
-    $('.hambarger').click((event) => {
+    $('.hambarger').click(function (event) {
+        $(this).toggleClass('active');
         $('.nav-items').toggleClass('active');
         $('.close-btn').css("visibility", "visible");
+        if ($(this).hasClass('active')) {
+            $(this).html(`
+            <i class="fas fa-times"></i>
+            `)
+        }
+        else {
+            $(this).html(`
+            <i class="fas fa-bars"></i>
+        `)
+        }
     })
 
     $('.card').hover(function (event) {

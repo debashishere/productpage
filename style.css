@@ -175,7 +175,7 @@ main .products .card-container .card {
     position: relative;
     border-radius: 8px;
     padding-top: 20px;
-    margin: 40px 10px;
+    margin: 40px 10px 40px 50px;
     border: 1px solid rgb(235, 235, 235);
     box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
     -webkit-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
@@ -516,15 +516,6 @@ main aside ul {
     }
 }
 
-@media (max-width: 830px) {
-    main .products .card-container {
-        justify-content: center;
-    }
-
-    main .products .card-container {
-        padding-left: 40px;
-    }
-}
 
 @media (max-width: 846px) {
     main {
@@ -581,6 +572,7 @@ main aside ul {
         width: 100%;
         margin-top: 50px;
         position: relative;
+        padding-left: 0;
     }
 
     .mainmenu li a:hover {
@@ -619,6 +611,15 @@ main aside ul {
 
     .submenu li a:hover {
         color: rgb(194, 255, 255);
+    }
+
+    main .products {
+        padding-left: 0;
+    }
+
+
+    main .products .card-container {
+        justify-content: center;
     }
 }
 
@@ -762,10 +763,6 @@ main aside ul {
 
     .mainmenu {
         justify-content: flex-start;
-    }
-
-    main .products .card-container {
-        justify-content: center;
     }
 
     .logo {
