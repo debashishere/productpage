@@ -51,17 +51,17 @@ $(document).ready(() => {
         countElement.val(count)
     })
 
-    $('.reveal-overlay').hover(function (event) {
-        const subMenu = $(this).next()
-        console.log("submenu", subMenu.length);
-        let hasSubmenu = subMenu.length
-        if (hasSubmenu) {
-            console.log("active overlay")
-            $('.products').addClass('active');
-        } else {
-            $('.products').removeClass('active');
-        }
-    })
+    // $('.reveal-overlay').hover(function (event) {
+    //     const subMenu = $(this).next()
+    //     console.log("submenu", subMenu.length);
+    //     let hasSubmenu = subMenu.length
+    //     if (hasSubmenu) {
+    //         console.log("active overlay")
+    //         $('.products').addClass('active');
+    //     } else {
+    //         $('.products').removeClass('active');
+    //     }
+    // })
 })
 
 

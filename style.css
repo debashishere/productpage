@@ -98,14 +98,6 @@ body {
     width: calc(100% - 180px);
     height: 4px;
     background: #FF6622;
-    background: linear-gradient(to right,
-            rgb(7, 7, 7),
-            red,
-            #f06d06,
-            #f16e09,
-            #ff8427,
-            #f5ba3c,
-            green);
     position: absolute;
     right: 0;
     bottom: 0;
@@ -255,7 +247,6 @@ main .products .card-container .card .addto-cart {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    /* padding-right: 43px; */
     margin-top: 10px;
     opacity: 0;
     transition: height 500ms, opacity 200ms;
@@ -528,21 +519,6 @@ main aside ul {
     main .products .card-container {
         padding-left: 40px;
     }
-
-    .hero-container header:before {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background: white;
-        z-index: 20;
-    }
-
-    .hero-container header {
-        box-shadow: 5px 5px 18px -3px rgb(65, 214, 182);
-    }
 }
 
 @media (max-width: 846px) {
@@ -557,6 +533,11 @@ main aside ul {
         width: 100%;
         padding-top: 0;
         padding-left: 2px;
+        position: fixed;
+        top: 90px;
+        left: 0;
+        z-index: 500;
+        background: rgba(0, 0, 0, 0.7);
     }
 
     .mainmenu {
@@ -570,7 +551,7 @@ main aside ul {
     .submenu {
         position: absolute;
         left: 2px;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.7);
         width: 175px;
         box-shadow: 11px 11px 25px -10px black;
         z-index: 50;
@@ -581,10 +562,11 @@ main aside ul {
         padding: 4px;
         text-align: center;
         margin: 2px;
-        background: rgb(65, 214, 182);
-        background: linear-gradient(to top, rgb(74, 110, 224), rgb(65, 214, 182));
+        /* background: rgb(65, 214, 182);
+        background: linear-gradient(to top, rgb(74, 110, 224), rgb(65, 214, 182)); */
         padding-left: 10px;
-        color: #000;
+        /* color: #000; */
+        color: white;
         text-align: left;
         z-index: 50;
     }
@@ -805,6 +787,10 @@ main aside ul {
     .hero-container header .topbar a:first-child span:before {
         left: 9.5px;
     }
+
+    main aside {
+        top: 60px;
+    }
 }
 
 @media (max-width: 661px) {
@@ -848,11 +834,7 @@ main aside ul {
         z-index: 10;
     }
 
-    main .products {
-        width: 100%;
-        margin: 0 auto;
-        padding-top: 30px;
-    }
+
 
     main .products .card-container .card {
         margin-right: 0;
@@ -887,16 +869,27 @@ main aside ul {
     }
 
     main .products {
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+
+    main .products {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-top: 0px;
     }
 
     main .products {
         padding-right: 15px;
     }
 
+}
+
+@media (max-width: 389px) {
+    main .products {
+        padding-top: 90px;
+    }
 }
 
 @media (max-width: 335px) {
@@ -929,6 +922,9 @@ main aside ul {
         padding-right: 30px;
     }
 
+    main aside {
+        top: 50px;
+    }
 }
 
 @media (max-width: 290px) {
