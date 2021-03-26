@@ -510,7 +510,7 @@ main aside ul {
         padding: 0 15px;
     }
 
-    main .products .card-container .card {
+    main .products .card-container.card {
         margin-left: 30px;
         margin-right: 30px;
     }
@@ -579,7 +579,7 @@ main aside ul {
 
     main .products {
         width: 100%;
-        padding-top: 30px;
+        margin-top: 50px;
         position: relative;
     }
 
@@ -870,7 +870,7 @@ main aside ul {
     main .products {
         width: 100%;
         margin: 0 auto;
-        padding-top: 30px;
+        margin-top: 60px;
     }
 
     main .products {
@@ -887,7 +887,11 @@ main aside ul {
 
 @media (max-width: 389px) {
     main .products {
-        padding-top: 90px;
+        margin-top: 90px;
+    }
+
+    main .products .card-container {
+        margin-top: 0;
     }
 }
 

@@ -16,7 +16,6 @@ $(document).ready(() => {
     })
 
     $('.card').hover(function (event) {
-        console.log("hover");
         $(this).css({
             'box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)',
             '-webkit-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)',
