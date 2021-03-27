@@ -175,13 +175,13 @@ main .products .card-container .card {
     position: relative;
     border-radius: 8px;
     padding-top: 20px;
-    margin: 40px 10px 40px 50px;
+    margin: 50px 10px 50px 50px;
     border: 1px solid rgb(235, 235, 235);
     box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
     -webkit-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
     -moz-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
-    transition: height 500ms ease;
-    -webkit-transition: height 500ms ease;
+    transition: height 500ms ease 150ms;
+    -webkit-transition: height 500ms ease 150ms;
     -moz-transition: height 500ms;
     -o-transition: height 500ms;
     z-index: 20;
@@ -203,10 +203,10 @@ main .products .card-container .card div:first-child {
 
 main .products .card-container .card img {
     position: absolute;
-    width: 100%;
+    /* width: 100%; */
     height: 270px;
     top: -25px;
-    left: -120px;
+    left: -20px;
     z-index: 30;
 }
 
@@ -229,7 +229,7 @@ main .products .card-container .card h2 {
 main .products .card-container .card div:first-child p {
     padding-top: 5px;
     font-size: 0.80rem;
-    padding-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 main .products .card-container .card span.price {
@@ -245,14 +245,15 @@ main .products .card-container .card span.price {
 main .products .card-container .card .addto-cart {
     position: relative;
     height: 0%;
+    visibility: hidden;
     width: 100%;
-    top: -10px;
+    top: -15px;
     background: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    margin-top: 10px;
+    margin-top: 0px;
     opacity: 0;
     transition: height 500ms, opacity 200ms;
     -webkit-transition: height 500ms, opacity 200ms;
@@ -262,10 +263,6 @@ main .products .card-container .card .addto-cart {
 }
 
 
-main .products .card-container .card .addto-cart:hover {
-    height: 68px;
-    opacity: 1;
-}
 
 main .products .card-container .card .addto-cart p.quantity {
     font-size: 0.95rem;
@@ -322,8 +319,9 @@ main .products .card-container .card .addto-cart div span:hover {
 
 main .products .card-container .card .addto-cart button.cart-btn {
     width: 100%;
+    height: 35px;
     position: absolute;
-    bottom: -40px;
+    bottom: -33px;
     left: 0;
     background-color: rgb(27, 27, 27);
     color: white;
@@ -333,10 +331,14 @@ main .products .card-container .card .addto-cart button.cart-btn {
     border: none;
     padding: 7px 0;
     font-size: 1rem;
+    z-index: 60;
+    /* transform: translateY(110px); */
 }
 
 main .products .card-container .card .addto-cart button.cart-btn:hover {
     background-color: #000;
+    /* transform: translateY(-180px); */
+    /* bottom: 0; */
 }
 
 main aside {
@@ -884,7 +886,7 @@ main aside ul {
 
 @media (max-width: 389px) {
     main .products {
-        margin-top: 90px;
+        padding-top: 40px;
     }
 
     main .products .card-container {

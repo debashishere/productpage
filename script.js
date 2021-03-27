@@ -26,21 +26,35 @@ $(document).ready(() => {
         }
     })
 
+
+
     $('.card').hover(function (event) {
+        $(this).addClass('active');
+        $(".card").map(function () {
+            if (!$(this).hasClass('active')) {
+                $(this).css({ "transform": "scale(0.95)" })
+            }
+        })
         $(this).css({
             'box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)',
             '-webkit-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)',
             '-moz-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)'
-        }).animate({ height: '300px' });
-        $(this).children(".addto-cart").css({ 'height': '68px', 'opacity': '1' })
-
+        }).animate({ height: '270px' });
+        $(this).children(".addto-cart").css({ 'height': '68px', 'opacity': '1', "visibility": "visible" })
     }, function () {
+        $(this).addClass('active');
+        $(".card").map(function () {
+            if (!$(this).hasClass('active')) {
+                $(this).css({ "transform": "scale(1)" })
+            }
+        })
+        $(this).removeClass('active');
         $(this).css({
             'box-shadow': ' 8px -8px 30px 5px rgba(66, 66, 66, 0.01)',
             '-webkit-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.01)',
             '-moz-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.01)'
         }).animate({ height: '215px' });
-        $(this).children(".addto-cart").css({ 'height': '0%', 'opacity': '0' })
+        $(this).children(".addto-cart").css({ 'height': '0%', 'opacity': '0', "visibility": "hidden" })
 
     });
 
