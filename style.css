@@ -10,11 +10,13 @@
 body {
     background: #F5F5F5;
     font-family: 'Poppins', sans-serif;
+
 }
 
 .hero-container {
     width: 1200px;
     margin: 0 auto;
+
 }
 
 .hero-container header {
@@ -30,7 +32,7 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     background-color: white;
-    z-index: 999 !important;
+    z-index: 40 !important;
     transition: 0.5s;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -203,7 +205,6 @@ main .products .card-container .card div:first-child {
 
 main .products .card-container .card img {
     position: absolute;
-    /* width: 100%; */
     height: 270px;
     top: -25px;
     left: -20px;
@@ -332,13 +333,10 @@ main .products .card-container .card .addto-cart button.cart-btn {
     padding: 7px 0;
     font-size: 1rem;
     z-index: 60;
-    /* transform: translateY(110px); */
 }
 
 main .products .card-container .card .addto-cart button.cart-btn:hover {
     background-color: #000;
-    /* transform: translateY(-180px); */
-    /* bottom: 0; */
 }
 
 main aside {
@@ -389,6 +387,15 @@ main aside ul {
     width: 5px;
 }
 
+.submenu {
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+}
+
 .mainmenu li:hover .submenu {
     display: block;
     max-height: 200px;
@@ -434,14 +441,7 @@ main aside ul {
     color: #fc5a15;
 }
 
-.submenu {
-    overflow: hidden;
-    max-height: 0;
-    transition: all 0.5s ease-out;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-}
+
 
 .nav-items li {
     display: flex;
@@ -504,7 +504,201 @@ main aside ul {
     color: rgb(107, 107, 107);
 }
 
+.cart-container {
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 90;
+    background: rgb(248, 249, 249);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: hidden;
+    opacity: 1;
+    clip-path: circle(0px at 84% 15px);
+    transition: clip-path 0.5s ease-in-out;
+}
 
+.cart-container.active {
+    opacity: 1;
+    clip-path: circle(75%);
+    z-index: 50;
+}
+
+.cart-container:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(195, 247, 195, 0.2);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.cart-container.removeafter:after {
+    opacity: 0;
+    display: none;
+}
+
+.cart-container .progress-container {
+    width: 100%;
+    height: 70px;
+    padding-right: 25px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(238, 236, 236);
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 2%);
+}
+
+.cart-container .progress-container a.cart-page-logo {
+    height: 70px;
+    width: 120px;
+    position: relative;
+}
+
+.cart-container .progress-container a.cart-page-logo img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart-container .progress-container .secure-container {
+    width: 180px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 0.80rem;
+    font-weight: 600;
+    line-height: 0.95rem;
+    letter-spacing: 0.010rem;
+}
+
+
+.cart-container .progress-container .secure-container img {
+    height: 50px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.cart-container .progress-container .progress-icons {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-container .progress-container .progress-icons a {
+    text-decoration: none;
+    position: relative;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgb(165, 165, 165);
+    transition: 0.2s ease-in-out;
+}
+
+.cart-container .progress-container .progress-icons a:hover {
+    color: rgb(0, 189, 0);
+}
+
+.cart-container .progress-container .progress-icons a:after {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    content: '';
+    width: 12px;
+    height: 12px;
+    transform: translate(0, -50%);
+    border-radius: 50%;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.cart-container .progress-container .progress-icons a:not(:last-child):before {
+    position: absolute;
+    top: 50%;
+    right: -125px;
+    content: '';
+    transform: translate(0, -50%);
+    border-top: 1px dashed rgb(204, 204, 204);
+    width: 100px;
+    height: 1px;
+}
+
+.cart-container .cart-content {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+}
+
+.cart-container .cart-content .cart-img-Bx {
+    position: relative;
+    height: 350px;
+    width: 350px;
+    object-fit: contain;
+}
+
+.cart-container .cart-content .cart-img-Bx img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cart-container .cart-content h2 {
+    font-size: 1.6rem;
+    word-spacing: 0.5rem;
+    margin-bottom: 7px;
+    color: rgb(112, 111, 111);
+}
+
+.cart-container .cart-content p {
+    font-size: 0.85rem;
+    color: rgb(0, 0, 0);
+}
+
+.cart-container .cart-btn {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-container .cart-btn a {
+    text-decoration: none;
+    padding: 7px 0px;
+    display: block;
+    width: 180px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    color: rgb(10, 10, 10);
+    border: 1px solid rgb(52, 183, 231);
+    border-radius: 5px;
+}
+
+.cart-container .cart-btn a:not(:last-child) {
+    margin-right: 15px;
+}
+
+.cart-container .cart-btn a.login-btn,
+a.checkout {
+    background-color: rgb(97, 214, 255);
+}
+
+
+.cart-container .cart-btn a.checkout {
+    display: none;
+}
 
 @media (max-width: 1200px) {
     .hero-container {
@@ -720,7 +914,6 @@ main aside ul {
     .hero-container header .topbar a:last-child {
         height: 32px;
         width: 38px;
-
         display: flex;
         justify-content: center;
         align-items: center;

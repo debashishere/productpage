@@ -80,6 +80,21 @@ $(document).ready(() => {
         const ele = $(this);
         ele.html(`<span><i class="fas fa-heart"></i></span>WishList`)
     })
+
+    $('#cart-icon').on("click", function (event) {
+        event.preventDefault();
+        $('.cart-container').addClass('active');
+        setTimeout(() => {
+            $('.cart-container').addClass('removeafter');
+        }, 500)
+
+    })
+
+    $('.continue-shopping').on("click", function (event) {
+        event.preventDefault();
+        $('.cart-container').removeClass('removeafter');
+        $('.cart-container').removeClass('active');
+    })
 })
 
 
