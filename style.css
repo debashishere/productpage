@@ -879,11 +879,6 @@ main aside ul {
     main .products {
         padding-right: 15px;
     }
-
-    /* .hero-container header ul.active {
-        top: 110px;
-    } */
-
 }
 
 @media (max-width: 389px) {

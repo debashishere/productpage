@@ -291,4 +291,31 @@ a.checkout {
     .cart-container .progress-container .progress-icons a {
         font-size: 0.75rem;
     }
+
+
+
+    .cart-container .cart-content .cart-img-Bx {
+        height: 200px;
+        width: 200px;
+    }
+
+    .cart-container .cart-btn {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .cart-container .cart-btn a:not(:last-child) {
+        margin-right: 0;
+
+    }
+
+    .cart-container .cart-btn a:not(:first-child) {
+        margin-top: 10px;
+    }
+
+    .cart-container .cart-btn a {
+        padding: 4px 5px;
+    }
 }
