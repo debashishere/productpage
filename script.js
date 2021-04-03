@@ -83,9 +83,12 @@ $(document).ready(() => {
 
     $('#cart-icon').on("click", function (event) {
         event.preventDefault();
+        $('.cart-container').addClass('activeloder');
         $('.cart-container').addClass('active');
+        $('.body-overlay').addClass('active');
         setTimeout(() => {
             $('.cart-container').addClass('removeafter');
+
         }, 500)
 
     })
@@ -94,7 +97,14 @@ $(document).ready(() => {
         event.preventDefault();
         $('.cart-container').removeClass('removeafter');
         $('.cart-container').removeClass('active');
+        $('.cart-container').removeClass('activeloder');
+        setTimeout(() => {
+            $('.body-overlay').removeClass('active');
+        }, 1300)
+
     })
+
+
 })
 
 
