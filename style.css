@@ -182,20 +182,27 @@ main .products .card-container .card {
     box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
     -webkit-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
     -moz-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
-    transition: 200ms ease-in-out 100ms;
-    -webkit-transition: 200ms ease-in-out 100ms;
-    -moz-transition: 200ms ease-in-out 100ms;
-    -o-transition: 200ms ease-in-out 100ms;
+    transition: all 0.4s ease-in-out 100ms;
+    -webkit-transition: all 0.4s ease-in-out 100ms;
+    -moz-transition: all 0.4s ease-in-out 100ms;
+    -o-transition: all 0.4s ease-in-out 100ms;
     z-index: 20;
     overflow: visible !important;
 }
 
+main .products .card-container .card:hover {
+    box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.25);
+    -webkit-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.25);
+    -moz-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.25);
+
+}
 
 main .products .card-container .card a#more-btn {
     display: block;
     width: 100%;
     text-align: center;
 }
+
 
 main .products .card-container .card div:first-child {
     padding-left: 60px;
@@ -206,8 +213,11 @@ main .products .card-container .card div:first-child {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    transition: 200ms ease-in-out 100ms;
+    -webkit-transition: 200ms ease-in-out 100ms;
     z-index: 10;
 }
+
 
 main .products .card-container .card img {
     position: absolute;
@@ -265,7 +275,7 @@ main .products .card-container .card span.price {
 main .products .card-container .card .addto-cart {
     position: relative;
     height: 0%;
-    visibility: hidden;
+    /* visibility: hidden; */
     width: 100%;
     top: -15px;
     background: rgb(255, 255, 255);
@@ -275,13 +285,17 @@ main .products .card-container .card .addto-cart {
     align-items: flex-end;
     margin-top: 0px;
     opacity: 0;
-    /* transition: 5s all ease-in-out;
-    -webkit-transition: height 500ms, opacity 200ms;
-    -moz-transition: height 500ms, opacity 200ms;
-    -o-transition: height 500ms, opacity 200ms; */
+    transition: 0.3s opacity ease-in-out 50ms;
+    -webkit-transition: 0.3s opacity ease-in-out 50ms;
+    -moz-transition: 0.3s opacity ease-in-out 50ms;
+    -o-transition: 0.3s opacity ease-in-out 50ms;
     z-index: 10;
 }
 
+main .products .card-container .card:hover .addto-cart {
+    opacity: 1;
+
+}
 
 main .products .card-container .card .addto-cart div a.more-btn {
     text-decoration: none;
