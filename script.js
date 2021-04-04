@@ -31,30 +31,31 @@ $(document).ready(() => {
     $('.card').hover(function (event) {
         $(this).addClass('active');
         $(".card").map(function () {
-            if (!$(this).hasClass('active')) {
-                $(this).css({ "transform": "scale(0.95)" })
+            if ($(this).hasClass('active')) {
+                $(this).css({ "transform": "scale(1.025)" })
             }
         })
         $(this).css({
             'box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)',
             '-webkit-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)',
             '-moz-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.25)'
-        }).animate({ height: '270px' });
-        $(this).children(".addto-cart").css({ 'height': '68px', 'opacity': '1', "visibility": "visible" })
+        })
+        $(this).children(".addto-cart").css({ 'opacity': '1', "visibility": "visible" })
     }, function () {
         $(this).addClass('active');
         $(".card").map(function () {
-            if (!$(this).hasClass('active')) {
+            if ($(this).hasClass('active')) {
                 $(this).css({ "transform": "scale(1)" })
             }
         })
-        $(this).removeClass('active');
+        $(this)
+            .removeClass('active');
         $(this).css({
             'box-shadow': ' 8px -8px 30px 5px rgba(66, 66, 66, 0.01)',
             '-webkit-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.01)',
             '-moz-box-shadow': '8px -8px 30px 5px rgba(66, 66, 66, 0.01)'
-        }).animate({ height: '215px' });
-        $(this).children(".addto-cart").css({ 'height': '0%', 'opacity': '0', "visibility": "hidden" })
+        })
+        $(this).children(".addto-cart").css({ 'opacity': '0', "visibility": "hidden" })
 
     });
 
@@ -100,6 +101,7 @@ $(document).ready(() => {
         $('.cart-container').removeClass('activeloder');
         setTimeout(() => {
             $('.body-overlay').removeClass('active');
+
         }, 1300)
 
     })

@@ -182,20 +182,26 @@ main .products .card-container .card {
     box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
     -webkit-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
     -moz-box-shadow: 8px -8px 30px 5px rgba(66, 66, 66, 0.01);
-    transition: height 500ms ease 150ms;
-    -webkit-transition: height 500ms ease 150ms;
-    -moz-transition: height 500ms;
-    -o-transition: height 500ms;
+    transition: 200ms ease-in-out 100ms;
+    -webkit-transition: 200ms ease-in-out 100ms;
+    -moz-transition: 200ms ease-in-out 100ms;
+    -o-transition: 200ms ease-in-out 100ms;
     z-index: 20;
     overflow: visible !important;
 }
 
 
+main .products .card-container .card a#more-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 main .products .card-container .card div:first-child {
     padding-left: 60px;
     padding-top: 20px;
     padding-right: 20px;
-    padding-bottom: 5px;
+    padding-bottom: 25px;
     min-height: 192px;
     display: flex;
     flex-direction: column;
@@ -212,14 +218,27 @@ main .products .card-container .card img {
 }
 
 main .products .card-container .tag {
-    background-color: rgb(23, 108, 187);
+
     font-size: 0.65rem;
     border-radius: 5px;
     padding: 0 7px;
     color: white;
     top: 5px;
     left: 60px;
+    background-color: rgb(23, 108, 187);
+    animation: hue 11s linear 0s infinite reverse;
     position: absolute;
+}
+
+main .products .card-container .tag::before {
+    background: linear-gradient(105deg, rgba(255, 190, 0, 0), #ffbe00);
+    animation: hue 12s linear 1s infinite;
+}
+
+@keyframes hue {
+    to {
+        filter: hue-rotate(1turn);
+    }
 }
 
 main .products .card-container .card h2 {
@@ -256,83 +275,37 @@ main .products .card-container .card .addto-cart {
     align-items: flex-end;
     margin-top: 0px;
     opacity: 0;
-    transition: height 500ms, opacity 200ms;
+    /* transition: 5s all ease-in-out;
     -webkit-transition: height 500ms, opacity 200ms;
     -moz-transition: height 500ms, opacity 200ms;
-    -o-transition: height 500ms, opacity 200ms;
+    -o-transition: height 500ms, opacity 200ms; */
     z-index: 10;
 }
 
 
-
-main .products .card-container .card .addto-cart p.quantity {
-    font-size: 0.95rem;
-    color: rgb(168, 168, 168);
-    padding-right: 53px;
-}
-
-main .products .card-container .card .addto-cart input.count {
-    font-size: 0.8rem;
-    width: 50px;
-    background-color: white;
-    text-align: center;
-    color: rgb(14, 14, 14);
-    outline: none;
-    border: none;
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-}
-
-main .products .card-container .card .addto-cart input.count:hover {
-    background-color: whitesmoke;
-}
-
-main .products .card-container .card .addto-cart input.count:focus {
-    outline: none;
-}
-
-main .products .card-container .card .addto-cart div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100px;
-    margin: 3px 25px 12px 0;
-}
-
-main .products .card-container .card .addto-cart div input {
-    margin-right: 5px;
-    margin-left: 5px;
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: black;
-}
-
-main .products .card-container .card .addto-cart div span {
-    font-size: 1rem;
-    color: rgb(168, 168, 168);
-}
-
-main .products .card-container .card .addto-cart div span:hover {
-    color: rgb(63, 63, 63);
-}
-
-main .products .card-container .card .addto-cart button.cart-btn {
-    width: 100%;
-    height: 35px;
+main .products .card-container .card .addto-cart div a.more-btn {
+    text-decoration: none;
+    width: 90px;
     position: absolute;
-    bottom: -33px;
-    left: 0;
-    background-color: rgb(27, 27, 27);
-    color: white;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    bottom: -28px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: 0.5s all ease-in-out;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(255, 251, 251);
+    border-radius: 5px;
+    padding: 2px 0;
     outline: none;
     border: none;
-    padding: 7px 0;
-    font-size: 1rem;
+    font-size: 0.80rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    text-align: center;
     z-index: 60;
+}
+
+main .products .card-container .card .addto-cart div a.more-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 main .products .card-container .card .addto-cart button.cart-btn:hover {

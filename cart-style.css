@@ -23,7 +23,7 @@ body {
 .cart-container.activeloder {
     opacity: 1;
     clip-path: circle(20% at 90% 10px);
-    transition: clip-path 0.2s ease-in-out 1.8s;
+    transition: clip-path 0.2s ease-in-out 1.3s;
     z-index: 50;
 }
 
@@ -267,7 +267,27 @@ a.checkout {
 
 @media (max-width: 685px) {
     .cart-container .progress-container .secure-container {
+        /* display: none; */
+    }
+
+    .cart-container .progress-container .progress-icons {
+        position: absolute;
+        top: 14%;
+        left: 0;
+        transition: translate(0, );
+    }
+
+    .cart-container .cart-content {
+        margin-top: 50px;
+    }
+
+    .cart-container .progress-container .progress-icons a:after {
         display: none;
+    }
+
+    .cart-container .cart-content .cart-img-Bx {
+        width: 230px;
+        height: 230px;
     }
 
     .cart-container .progress-container {
