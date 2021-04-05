@@ -75,6 +75,17 @@ $(document).ready(() => {
         event.preventDefault();
         $('.cart-container').removeClass('active');
     })
+
+    $('a.wish-list').on("click", function (event) {
+        event.preventDefault();
+        console.log("click");
+        $('.wishlist-container').css({ 'display': "flex" });
+        $('body, html').css({ "overflow": "hidden" })
+    })
+    $('a.list-add-btn').on("click", function (event) {
+        event.preventDefault();
+        $('.wishlist-container').css({ 'display': "none" });
+    })
 })
 
 

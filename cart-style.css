@@ -110,38 +110,31 @@ svg {
 .cart-container .progress-container .progress-icons a {
     text-decoration: none;
     position: relative;
-    font-size: 0.85rem;
+    font-size: 0.80rem;
     font-weight: 500;
-    color: rgb(165, 165, 165);
+    color: rgb(112, 112, 112);
     transition: 0.2s ease-in-out;
+    display: block;
+    padding: 4px 8px;
+    text-align: center;
 }
 
 .cart-container .progress-container .progress-icons a:hover {
     color: rgb(0, 189, 0);
 }
 
+
 .cart-container .progress-container .progress-icons a:after {
     position: absolute;
     top: 50%;
-    right: -25px;
-    content: '';
-    width: 12px;
-    height: 12px;
+    right: -10px;
+    content: '->';
+    height: 15px;
     transform: translate(0, -50%);
-    border-radius: 50%;
-    border: 1px solid rgb(204, 204, 204);
+    padding-bottom: 4px;
 }
 
-.cart-container .progress-container .progress-icons a:not(:last-child):before {
-    position: absolute;
-    top: 50%;
-    right: -125px;
-    content: '';
-    transform: translate(0, -50%);
-    border-top: 1px dashed rgb(204, 204, 204);
-    width: 100px;
-    height: 1px;
-}
+
 
 .cart-container .cart-content {
     width: 100%;
@@ -151,6 +144,7 @@ svg {
     justify-content: center;
     align-items: center;
     background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(236, 236, 236);
 }
 
 .cart-container .cart-content .cart-img-Bx {
@@ -225,10 +219,6 @@ a.checkout {
     .cart-container .progress-container .progress-icons {
         width: 300px;
     }
-
-    .cart-container .progress-container .progress-icons a:after {
-        right: -20px;
-    }
 }
 
 
@@ -236,17 +226,56 @@ a.checkout {
 
     .cart-container .progress-container .progress-icons {
         position: absolute;
-        top: 14%;
+        width: 100%;
+        top: 45px;
+        height: 32px;
         left: 0;
-        transition: translate(0, );
+        justify-content: center;
+        font-size: 0.9rem;
+        margin-top: 15px;
+        padding-left: 13px;
+        color: white;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 20;
     }
 
-    .cart-container .cart-content {
-        margin-top: 50px;
+    .cart-container .progress-container .progress-icons:after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: -80px;
+        width: 95px;
+        z-index: -10;
+    }
+
+
+    .cart-container .progress-container .progress-icons a {
+        color: white;
+        position: relative;
+        font-size: 0.80rem;
+        font-weight: 500;
+        padding: 3px 0px;
     }
 
     .cart-container .progress-container .progress-icons a:after {
+        content: '';
         display: none;
+    }
+
+    .cart-container .progress-container .progress-icons a:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    .cart-container .progress-container .progress-icons a:first-child {
+        margin-right: 45px;
+    }
+
+    .cart-container .progress-container .progress-icons a:nth-child(2) {
+        margin-right: 45px;
+    }
+
+    .cart-container .cart-content {
+        padding-top: 50px;
     }
 
     .cart-container .cart-content .cart-img-Bx {
@@ -257,19 +286,28 @@ a.checkout {
     .cart-container .progress-container {
         padding-right: 40px;
     }
+
+    .cart-container .progress-container {
+        position: relative;
+    }
+
+    .cart-container .progress-container:after {
+        content: '';
+        position: absolute;
+        width: Calc(100% - 120px);
+        height: 5px;
+        bottom: -1px;
+        left: 120px;
+        background-color: #FF6622;
+        z-index: 40;
+    }
+
+
 }
 
 @media (max-width: 487px) {
     .cart-container .progress-container {
         padding-right: 10px;
-    }
-
-    .cart-container .progress-container .progress-icons {
-        width: calc(100% - 130px);
-    }
-
-    .cart-container .progress-container .progress-icons a:after {
-        display: none;
     }
 
     .cart-container .progress-container .progress-icons a {
