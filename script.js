@@ -58,7 +58,7 @@ $(document).ready(() => {
         ele.html(`<span><i class="fas fa-heart"></i></span>WishList`)
     })
 
-    $('#cart-icon').on("click", function (event) {
+    $('.cart-icon').on("click", function (event) {
         event.preventDefault();
         $('.body-overlay').removeClass('active')
         $('.body-overlay').css('display', 'flex')
@@ -70,6 +70,7 @@ $(document).ready(() => {
             $('.body-overlay').css('display', 'none');
         }, 1000)
     })
+
 
     $('.continue-shopping').on("click", function (event) {
         event.preventDefault();
@@ -86,6 +87,9 @@ $(document).ready(() => {
         event.preventDefault();
         $('.wishlist-container').css({ 'display': "none" });
     })
+
+    //decks
+
 })
 
 
