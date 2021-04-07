@@ -7,7 +7,7 @@ $(document).ready(() => {
         $('.body-overlay').css('display', 'none')
     }, 1000)
 
-    $('.hero-container a[href]').click(function (e) { e.preventDefault(); });
+    // $('.hero-container a[href]').click(function (e) { e.preventDefault(); });
 
     $('.search').on("click", (event) => {
         event.preventDefault();
@@ -77,12 +77,12 @@ $(document).ready(() => {
         $('.cart-container').removeClass('active');
     })
 
-    $('a.wish-list').on("click", function (event) {
-        event.preventDefault();
-        console.log("click");
-        $('.wishlist-container').css({ 'display': "flex" });
-        $('body, html').css({ "overflow": "hidden" })
-    })
+    // $('a.wish-list').on("click", function (event) {
+    //     event.preventDefault();
+    //     console.log("click");
+    //     $('.wishlist-container').css({ 'display': "flex" });
+    //     $('body, html').css({ "overflow": "hidden" })
+    // })
     $('a.list-add-btn').on("click", function (event) {
         event.preventDefault();
         $('.wishlist-container').css({ 'display': "none" });
