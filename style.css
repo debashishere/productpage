@@ -51,6 +51,7 @@ body {
 }
 
 .hero-container header .topbar a {
+    text-decoration: none;
     color: rgb(104, 104, 104);
     font-size: 0.80rem;
     cursor: pointer;
