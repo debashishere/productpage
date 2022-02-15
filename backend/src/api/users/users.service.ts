@@ -3,6 +3,7 @@ import { UserDTO } from './dto/user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from '../../model/user.entity';
+import { IUpdateResult } from './interfaces/update-result.interface';
 
 @Injectable()
 export class UsersService {
@@ -37,16 +38,27 @@ export class UsersService {
   }
 
   async update(id: string, user: UserDTO): Promise<User> {
-    // Update
-    await this.userRepository.update(id, {
+    // construct data with only updated field
+    const data = {
       ...(user.name && { name: user.name }),
       ...(user.email && { email: user.email }),
       ...(user.bio && { bio: user.bio }),
       ...(user.image && { image: user.image })
-    });
+    }
 
-    // Return
-    return this.userRepository.findOneOrFail(id);
+    const toBeReturn = ['id', 'name', 'email', 'bio', 'image']
+
+    const updatedResult: IUpdateResult = await this.userRepository
+      .createQueryBuilder("user")
+      .update<User>(User, data)
+      .where({ id })
+      .returning(toBeReturn)
+      .updateEntity(true)
+      .execute();
+
+    // assign returned user
+    const updatedUser = updatedResult.raw[0]
+    return updatedUser
   }
 
   remove(id: string) {

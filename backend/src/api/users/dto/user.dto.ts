@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsUUID, } from 'class-validator';
+import { IsBoolean, IsString, IsUUID, } from 'class-validator';
 import { User } from '../../../model/user.entity';
 
 export class UserDTO implements Readonly<UserDTO> {
@@ -23,6 +23,19 @@ export class UserDTO implements Readonly<UserDTO> {
   @ApiProperty({ required: false })
   @IsString()
   image: string;
+
+  @ApiProperty()
+  @IsBoolean()
+  isActive?: boolean;
+
+  @ApiProperty()
+  @IsString()
+  createDateTime?: Date;
+
+  @ApiProperty()
+  @IsString()
+  lastChangedDateTime?: Date;
+
 
 
   public static from(dto: Partial<UserDTO>) {

@@ -12,14 +12,14 @@ export class User extends BaseEntity {
   email: string;
 
   @Column({ type: 'varchar', length: 300 })
-  bio: string;
+  bio?: string;
 
   @Column({ type: 'varchar', length: 300 })
-  image: string;
+  image?: string;
 
   @OneToMany(() => Order, order => order.users)
   @JoinColumn()
-  orders: Order;
+  orders?: Order;
 
 }
 
