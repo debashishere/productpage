@@ -1,8 +1,8 @@
 import { Module } from "@nestjs/common";
-import { ItemModule } from "./items/item.model";
+import { BoardModule } from "./boards/board.model";
 
 @Module({
-  imports: [ItemModule],
+  imports: [BoardModule],
   providers: [],
   controllers: [],
   exports: []

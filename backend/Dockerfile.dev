@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8000
 
 # Run npm start script with PM2 when container starts
-CMD [ "npm", "--name=skato", "--", "run", "start"]
+CMD [ "npm",  "run", "start:dev"]
