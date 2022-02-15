@@ -1,9 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { UserDTO } from './dto/user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from '../../model/user.entity';
-import { IUpdateResult } from './interfaces/update-result.interface';
+import { IUpdatedUser } from './interfaces/updated-user.interface';
 
 @Injectable()
 export class UsersService {
@@ -19,13 +19,16 @@ export class UsersService {
       .then(users => users.map(user => UserDTO.fromEntity(user)))
   }
 
-  getOne(id: string) {
+  async getOne(id: string) {
     const query = { where: { id } }
-    return this.userRepository.findOne(query)
-
+    const foundUser = await this.userRepository.findOne(query)
+    if (!foundUser) {
+      throw new NotFoundException('user not found.')
+    }
+    return foundUser
   }
 
-  getOneByUID(firebaseUID: string) {
+  async getOneByUID(firebaseUID: string) {
     const query = { where: { firebaseUID } }
     return this.userRepository.findOne(query)
 
@@ -49,20 +52,20 @@ export class UsersService {
 
     const toBeReturn = ['id', 'name', 'email', 'bio', 'image']
 
-    const updatedResult: IUpdateResult = await this.userRepository
+    const updatedResult: IUpdatedUser = await this.userRepository
       .createQueryBuilder("user")
       .update<User>(User, data)
       .where({ id })
       .returning(toBeReturn)
       .updateEntity(true)
       .execute();
-    console.log(" updatedResult ", updatedResult)
+
     // assign returned user
-    const updatedUser = updatedResult.raw[0]
+    const updatedUser = updatedResult.row[0]
     return updatedUser
   }
 
-  remove(id: string) {
+  async delete(id: string) {
     return this.userRepository.delete(id)
   }
 }

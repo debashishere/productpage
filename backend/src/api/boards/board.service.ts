@@ -1,5 +1,5 @@
 
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Board } from '../../model/board.entity';
 import { Repository } from 'typeorm';
@@ -19,9 +19,37 @@ export class BoardService {
       .then(e => BoardDTO.fromEntity(e));
   }
 
-  getOne(id: string) {
+  // async update(id: string, user: UserDTO): Promise<User> {
+  //   // construct data with only updated field
+  //   const data = {
+  //     ...(user.name && { name: user.name }),
+  //     ...(user.email && { email: user.email }),
+  //     ...(user.bio && { bio: user.bio }),
+  //     ...(user.image && { image: user.image })
+  //   }
+
+  //   const toBeReturn = ['id', 'name', 'email', 'bio', 'image']
+
+  //   const updatedResult: IUpdateResult = await this.userRepository
+  //     .createQueryBuilder("user")
+  //     .update<User>(User, data)
+  //     .where({ id })
+  //     .returning(toBeReturn)
+  //     .updateEntity(true)
+  //     .execute();
+  //   console.log(" updatedResult ", updatedResult)
+  //   // assign returned user
+  //   const updatedUser = updatedResult.raw[0]
+  //   return updatedUser
+  // }
+
+  async getOne(id: string) {
     const query = { where: { id } }
-    return this.boardRepository.findOne(query)
+    const foundBoard = await this.boardRepository.findOne(query)
+    if (!foundBoard) {
+      throw new NotFoundException('product not found.')
+    }
+    return foundBoard
   }
 
   delete(id: string) {
