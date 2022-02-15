@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { UserDTO } from './dto/user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from '../../model/user.entity';
@@ -20,14 +19,37 @@ export class UsersService {
   }
 
   getOne(id: string) {
-    return `This action returns a #${id} user`;
+    const query = { where: { id } }
+    return this.userRepository.findOne(query)
+
   }
 
-  update(id: string, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  getOneByUID(firebaseUID: string) {
+    const query = { where: { firebaseUID } }
+    return this.userRepository.findOne(query)
+
+  }
+
+  getOneByEmail(email: string) {
+    const query = { where: { email } }
+    return this.userRepository.findOne(query)
+
+  }
+
+  async update(id: string, user: UserDTO): Promise<User> {
+    // Update
+    await this.userRepository.update(id, {
+      ...(user.name && { name: user.name }),
+      ...(user.email && { email: user.email }),
+      ...(user.bio && { bio: user.bio }),
+      ...(user.image && { image: user.image })
+    });
+
+    // Return
+    return this.userRepository.findOneOrFail(id);
   }
 
   remove(id: string) {
-    return `This action removes a #${id} user`;
+    return this.userRepository.delete(id)
   }
 }
