@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { BoardDTO } from './dto/board.dto';
 import { BoardService } from './board.service';
 
-@Controller('Board')
+@Controller('api/boards')
 export class BoardController {
   constructor(private serv: BoardService) { }
 
