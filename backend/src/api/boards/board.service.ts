@@ -7,16 +7,24 @@ import { BoardDTO } from './dto/board.dto';
 
 @Injectable()
 export class BoardService {
-  constructor(@InjectRepository(Board) private readonly repo: Repository<Board>) { }
+  constructor(@InjectRepository(Board) private readonly boardRepository: Repository<Board>) { }
 
   public async getAll(): Promise<BoardDTO[]> {
-    return await this.repo.find()
+    return await this.boardRepository.find()
       .then(Boards => Boards.map(e => BoardDTO.fromEntity(e)))
   }
 
-
   public async create(dto: BoardDTO): Promise<BoardDTO> {
-    return this.repo.save(BoardDTO.toEntity(dto))
+    return this.boardRepository.save(BoardDTO.toEntity(dto))
       .then(e => BoardDTO.fromEntity(e));
+  }
+
+  getOne(id: string) {
+    const query = { where: { id } }
+    return this.boardRepository.findOne(query)
+  }
+
+  delete(id: string) {
+    return this.boardRepository.delete(id)
   }
 }

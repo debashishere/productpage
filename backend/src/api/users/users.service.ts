@@ -31,10 +31,11 @@ export class UsersService {
 
   }
 
-  getOneByEmail(email: string) {
+  async getOneByEmail(email: string): Promise<boolean> {
     const query = { where: { email } }
-    return this.userRepository.findOne(query)
-
+    const foundUser: User = await this.userRepository.findOne(query)
+    const isUserExist = foundUser ? true : false;
+    return isUserExist
   }
 
   async update(id: string, user: UserDTO): Promise<User> {
@@ -55,7 +56,7 @@ export class UsersService {
       .returning(toBeReturn)
       .updateEntity(true)
       .execute();
-
+    console.log(" updatedResult ", updatedResult)
     // assign returned user
     const updatedUser = updatedResult.raw[0]
     return updatedUser
