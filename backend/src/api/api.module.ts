@@ -3,7 +3,7 @@ import { BoardModule } from "./boards/board.model";
 import { UsersModule } from "./users/users.module";
 
 @Module({
-  imports: [BoardModule, UsersModule],
+  imports: [UsersModule],
   providers: [],
   controllers: [],
   exports: []

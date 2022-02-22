@@ -21,11 +21,10 @@ export class UsersController {
     return this.usersService.getOne(id);
   }
 
-  // TODO
   @Post('/email')
-  getOneByEmail() {
-    let email = 'test'
-    return this.usersService.getOneByEmail(email);
+  getOneByEmail(@Body() data: { email: string }): Promise<boolean> {
+    console.log(" email ", data)
+    return this.usersService.getOneByEmail(data.email);
   }
 
   @Patch(':id')
@@ -35,6 +34,6 @@ export class UsersController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.usersService.remove(id);
+    return this.usersService.delete(id);
   }
 }
