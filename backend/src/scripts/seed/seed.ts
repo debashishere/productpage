@@ -1,12 +1,12 @@
 // scripts/seed.ts
 import * as _ from 'lodash';
 import { createConnection, ConnectionOptions } from 'typeorm';
-import { configService } from '../shared/services/config.service';
-import { UsersService } from '../api/users/users.service';
-import { UserDTO } from '../api/users/dto/user.dto';
-import { getUserData } from './getUserData';
+import { configService } from '../../shared/services/config.service';
+import { UsersService } from '../../api/users/users.service';
+import { UserDTO } from '../../api/users/dto/user.dto';
+import { getUserData } from './data/getUserData';
 
-import { User } from '../model/user.entity';
+import { User } from '../../model/user.entity';
 
 async function run() {
   const sampleUid = `216dc9da-e093-4ee2-9f96-060ec46a6a02`
